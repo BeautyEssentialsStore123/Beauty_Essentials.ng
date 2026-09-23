@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beauty Essentials.ng</title>
+<title>Beauty Essentials.ng | Beauty, Lip Care & More</title>
 <style>
 * {
     box-sizing: border-box;
@@ -16,16 +16,16 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #fff7fa;
-    color: #3d1725;
+    color: #421626;
 }
 /* HEADER */
 header {
     background: #ffffff;
-    padding: 20px 7%;
+    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #f2d5df;
+    border-bottom: 1px solid #f1d3de;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -36,7 +36,7 @@ header {
     color: #8f174b;
 }
 .logo span {
-    color: #d72d72;
+    color: #d52d70;
 }
 nav a {
     text-decoration: none;
@@ -46,7 +46,7 @@ nav a {
     font-weight: 600;
 }
 nav a:hover {
-    color: #d72d72;
+    color: #d52d70;
 }
 /* HERO */
 .hero {
@@ -55,16 +55,17 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
     background:
         radial-gradient(
-            circle at 80% 40%,
-            #f5b4ca,
-            #fce4ec 30%,
-            #fff7fa 65%
+            circle at 75% 45%,
+            #f5b1c9,
+            #fce4ed 30%,
+            #fff7fa 68%
         );
 }
 .hero-text {
-    max-width: 540px;
+    max-width: 560px;
 }
 .small-text {
     color: #b31e5c;
@@ -87,7 +88,7 @@ nav a:hover {
     color: #725360;
     font-size: 17px;
     line-height: 1.7;
-    max-width: 450px;
+    max-width: 480px;
 }
 .button {
     display: inline-block;
@@ -103,67 +104,98 @@ nav a:hover {
 .button:hover {
     background: #8f174b;
 }
-/* LIP GLOSS VISUAL */
-.gloss-area {
-    width: 360px;
+/* LIP COMBO HERO VISUAL */
+.lips-area {
+    width: 390px;
     height: 430px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
-.pink-glow {
+.lip-glow {
     position: absolute;
-    width: 290px;
-    height: 290px;
+    width: 300px;
+    height: 300px;
     background: #e94386;
-    filter: blur(75px);
+    filter: blur(80px);
     opacity: 0.25;
 }
-.gloss {
-    width: 120px;
-    height: 325px;
-    background:
-        linear-gradient(
-            90deg,
-            #9d174f,
-            #df347a,
-            #ff9fc2,
-            #d51f6c,
-            #8f174b
-        );
-    border-radius: 18px 18px 28px 28px;
+/* Stylised glossy lips */
+.lips {
     position: relative;
     z-index: 2;
-    box-shadow: 0 25px 50px rgba(143,23,75,0.25);
-    transform: rotate(-8deg);
+    width: 310px;
+    height: 170px;
 }
-.gloss::before {
-    content: "";
+.upper-lip,
+.lower-lip {
     position: absolute;
-    width: 104px;
-    height: 72px;
-    background: linear-gradient(
-        90deg,
-        #ffffff,
-        #dcdcdc,
-        #ffffff
+    left: 50%;
+    transform: translateX(-50%);
+}
+.upper-lip {
+    top: 25px;
+    width: 270px;
+    height: 90px;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #b51f59 0%,
+            #7e123e 60%,
+            #55152e 100%
+        );
+    border-radius: 48% 52% 45% 55%;
+    clip-path: polygon(
+        0 48%,
+        25% 27%,
+        42% 42%,
+        50% 25%,
+        58% 42%,
+        75% 27%,
+        100% 48%,
+        82% 73%,
+        18% 73%
     );
-    top: -58px;
-    left: 8px;
-    border-radius: 10px 10px 5px 5px;
 }
-.gloss::after {
-    content: "BEAUTY";
+.lower-lip {
+    top: 72px;
+    width: 285px;
+    height: 105px;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #df4d83 0%,
+            #b51f59 65%,
+            #7e123e 100%
+        );
+    border-radius: 25% 25% 50% 50%;
+}
+.lip-shine {
     position: absolute;
-    color: white;
-    font-size: 11px;
-    letter-spacing: 3px;
-    transform: rotate(90deg);
-    top: 145px;
-    left: 32px;
+    z-index: 4;
+    top: 104px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 125px;
+    height: 25px;
+    background: rgba(255,255,255,0.65);
+    border-radius: 50%;
+    filter: blur(4px);
 }
-/* CATEGORY SECTION */
+.lip-outline {
+    position: absolute;
+    z-index: 3;
+    top: 29px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 278px;
+    height: 137px;
+    border: 5px solid #641333;
+    border-radius: 48%;
+    opacity: 0.75;
+}
+/* CATEGORIES */
 .categories {
     padding: 80px 7%;
     background: #ffffff;
@@ -180,7 +212,6 @@ nav a:hover {
     margin-top: 10px;
     color: #86616e;
 }
-/* CATEGORY GRID */
 .category-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -220,23 +251,82 @@ nav a:hover {
     padding: 80px 7%;
     background: #fff7fa;
 }
-.product-placeholder {
-    background: white;
-    border: 1px solid #f1d4df;
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    max-width: 600px;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
     margin: auto;
 }
-.product-placeholder h3 {
-    color: #8f174b;
-    font-size: 24px;
-    margin-bottom: 12px;
+.product-card {
+    background: white;
+    border: 1px solid #f1d4df;
+    border-radius: 22px;
+    padding: 28px;
+    text-align: center;
+    transition: 0.3s;
 }
-.product-placeholder p {
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(143,23,75,0.10);
+}
+.product-visual {
+    height: 180px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fde0ea, #f6b1c8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+.product-card h3 {
+    color: #8f174b;
+    margin-bottom: 8px;
+}
+.product-card p {
     color: #80606b;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.price {
+    display: block;
+    color: #c92769;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+.order-small {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    background: #c92769;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+/* CATEGORY PRODUCT AREAS */
+.category-products {
+    padding: 70px 7%;
+    background: white;
+    border-top: 1px solid #f3dce4;
+}
+.category-products:nth-of-type(even) {
+    background: #fff7fa;
+}
+.category-products h2 {
+    text-align: center;
+    color: #55152e;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+.category-note {
+    text-align: center;
+    color: #80606b;
+    max-width: 600px;
+    margin: -20px auto 35px;
 }
 /* CONTACT */
 .contact {
@@ -271,9 +361,15 @@ footer {
     color: #f8dce7;
     font-size: 13px;
 }
+footer p {
+    margin: 5px;
+}
 /* MOBILE */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -296,15 +392,22 @@ footer {
     .hero p {
         margin: auto;
     }
-    .gloss-area {
-        margin-top: 50px;
-        width: 280px;
-        height: 350px;
+    .lips-area {
+        margin-top: 30px;
+        width: 300px;
+        height: 300px;
+        transform: scale(0.85);
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 }
 @media (max-width: 480px) {
     .category-grid {
         grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 40px;
     }
 }
 </style>
@@ -320,6 +423,7 @@ footer {
         <a href="#contact">Contact</a>
     </nav>
 </header>
+<!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-text">
         <div class="small-text">
@@ -331,86 +435,160 @@ footer {
             YOUR GLOW.
         </h1>
         <p>
-            Discover lip glosses, lip care products,
-            skincare, hair accessories and everyday
-            beauty essentials.
+            Shop lip glosses, lip care products, skincare,
+            hair accessories and everyday beauty essentials
+            carefully selected for you.
         </p>
         <a class="button" href="#categories">
             SHOP NOW →
         </a>
     </div>
-    <div class="gloss-area">
-        <div class="pink-glow"></div>
-        <div class="gloss"></div>
+    <div class="lips-area">
+        <div class="lip-glow"></div>
+        <div class="lips">
+            <div class="lip-outline"></div>
+            <div class="upper-lip"></div>
+            <div class="lower-lip"></div>
+            <div class="lip-shine"></div>
+        </div>
     </div>
 </section>
+<!-- CATEGORIES -->
 <section class="categories" id="categories">
     <div class="section-heading">
         <h2>Shop by Category</h2>
         <p>
-            Find exactly what you're looking for.
+            Everything you need to complete your beauty routine.
         </p>
     </div>
     <div class="category-grid">
         <a class="category" href="#lip-glosses">
             <div class="category-icon">💋</div>
             <h3>Lip Glosses</h3>
-            <p>
-                Glossy lips for every mood and look.
-            </p>
+            <p>Glossy lips for every mood and look.</p>
         </a>
         <a class="category" href="#lip-care">
             <div class="category-icon">💗</div>
             <h3>Lip Care Products</h3>
-            <p>
-                Products for soft and healthy-looking lips.
-            </p>
+            <p>Care for soft and healthy-looking lips.</p>
         </a>
         <a class="category" href="#skincare">
             <div class="category-icon">🧴</div>
             <h3>Skincare</h3>
-            <p>
-                Everyday skincare essentials.
-            </p>
+            <p>Everyday skincare essentials.</p>
         </a>
         <a class="category" href="#hair-accessories">
             <div class="category-icon">🎀</div>
             <h3>Hair Accessories</h3>
-            <p>
-                Clips and accessories for your hair.
-            </p>
+            <p>Accessories for simple and beautiful hairstyles.</p>
         </a>
         <a class="category" href="#beauty-essentials">
             <div class="category-icon">✨</div>
             <h3>Beauty Essentials</h3>
-            <p>
-                Little beauty extras you'll love.
-            </p>
+            <p>Little beauty extras you'll love.</p>
         </a>
     </div>
 </section>
-<section class="products-section">
-    <div class="section-heading">
-        <h2>Our Products</h2>
-        <p>
-            Product pictures, prices and order buttons
-            will be added here.
-        </p>
-    </div>
-    <div class="product-placeholder">
-        <h3>Coming Soon 💗</h3>
-        <p>
-            We're getting your Beauty Essentials
-            collection ready.
-        </p>
+<!-- LIP GLOSSES -->
+<section class="category-products" id="lip-glosses">
+    <h2>💋 Lip Glosses</h2>
+    <p class="category-note">
+        Glossy, pretty lip products for your everyday looks and lip combos.
+    </p>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-visual">💄</div>
+            <h3>Gloss Collection</h3>
+            <p>Choose your favourite shade for a beautiful glossy finish.</p>
+            <span class="price">Price available on order</span>
+            <a class="order-small" href="https://wa.me/2347068624896">
+                Order on WhatsApp
+            </a>
+        </div>
     </div>
 </section>
+<!-- LIP CARE -->
+<section class="category-products" id="lip-care">
+    <h2>💗 Lip Care Products</h2>
+    <p class="category-note">
+        Give your lips the care they deserve with our lip care essentials.
+    </p>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-visual">💗</div>
+            <h3>Lip Care Collection</h3>
+            <p>Care products to keep your lips feeling soft and moisturised.</p>
+            <span class="price">Price available on order</span>
+            <a class="order-small" href="https://wa.me/2347068624896">
+                Order on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+<!-- SKINCARE -->
+<section class="category-products" id="skincare">
+    <h2>🧴 Skincare</h2>
+    <p class="category-note">
+        Everyday skincare products for your beauty routine.
+    </p>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-visual">✨</div>
+            <h3>Skincare Collection</h3>
+            <p>Explore our available skincare essentials.</p>
+            <span class="price">Price available on order</span>
+            <a class="order-small" href="https://wa.me/2347068624896">
+                Order on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+<!-- HAIR ACCESSORIES -->
+<section class="category-products" id="hair-accessories">
+    <h2>🎀 Hair Accessories</h2>
+    <p class="category-note">
+        Cute and useful accessories to complete your hair routine.
+    </p>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-visual">🎀</div>
+            <h3>Hair Accessories</h3>
+            <p>Discover clips and other useful hair accessories.</p>
+            <span class="price">Price available on order</span>
+            <a class="order-small" href="https://wa.me/2347068624896">
+                Order on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+<!-- BEAUTY ESSENTIALS -->
+<section class="category-products" id="beauty-essentials">
+    <h2>✨ Beauty Essentials</h2>
+    <p class="category-note">
+        Everyday beauty extras that make getting ready even better.
+    </p>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-visual">✨</div>
+            <h3>Beauty Essentials</h3>
+            <p>Browse our selection of useful beauty must-haves.</p>
+            <span class="price">Price available on order</span>
+            <a class="order-small" href="https://wa.me/2347068624896">
+                Order on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+<!-- CONTACT -->
 <section class="contact" id="contact">
     <h2>Ready to shop? 💗</h2>
     <p>
         Send us a message on WhatsApp to place your order.
     </p>
-    <a class="button" href="https://wa.me/234YOURNUMBER">
+    <p>
+        Lagos • Ibadan
+    </p>
+    <a class="button" href="https://wa.me/2347068624896">
         ORDER ON WHATSAPP
     </a>
 </section>
