@@ -1,261 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty Essentials.ng</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #080808;
-            color: white;
-        }
-        /* HEADER */
-        header {
-            background: #080808;
-            padding: 22px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #252525;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        .logo span {
-            color: #ff2f92;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 18px;
-            font-size: 14px;
-        }
-        nav a:hover {
-            color: #ff2f92;
-        }
-        /* HERO */
-        .hero {
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 70px 8%;
-            background:
-                radial-gradient(circle at 80% 40%, rgba(255, 47, 146, 0.25), transparent 30%),
-                #080808;
-        }
-        .hero-text {
-            max-width: 520px;
-        }
-        .small-text {
-            color: #ff2f92;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 60px;
-            line-height: 0.95;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
-        }
-        .hero h1 span {
-            color: #ff2f92;
-        }
-        .hero p {
-            color: #c8c8c8;
-            font-size: 17px;
-            line-height: 1.7;
-            max-width: 450px;
-        }
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background: #ff2f92;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .button:hover {
-            background: white;
-            color: #080808;
-        }
-        /* LIP GLOSS VISUAL */
-        .gloss-area {
-            width: 360px;
-            height: 440px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .pink-glow {
-            position: absolute;
-            width: 280px;
-            height: 280px;
-            background: #ff2f92;
-            filter: blur(100px);
-            opacity: 0.35;
-        }
-        .gloss {
-            width: 115px;
-            height: 330px;
-            background: linear-gradient(
-                90deg,
-                #222,
-                #ff2f92,
-                #ff75b7,
-                #222
-            );
-            border-radius: 18px 18px 28px 28px;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 20px 60px rgba(255, 47, 146, 0.4);
-            transform: rotate(-8deg);
-        }
-        .gloss::before {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 70px;
-            background: #111;
-            top: -55px;
-            left: 8px;
-            border-radius: 12px 12px 5px 5px;
-        }
-        .gloss::after {
-            content: "BEAUTY";
-            position: absolute;
-            color: white;
-            font-size: 11px;
-            letter-spacing: 2px;
-            transform: rotate(90deg);
-            top: 145px;
-            left: 25px;
-        }
-        /* SECTION */
-        .section {
-            padding: 80px 8%;
-            background: #0d0d0d;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-        .section-title h2 {
-            font-size: 38px;
-        }
-        .section-title p {
-            color: #999;
-            margin-top: 10px;
-        }
-        /* PRODUCTS */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        .product {
-            background: #151515;
-            padding: 25px;
-            border-radius: 18px;
-            border: 1px solid #292929;
-            transition: 0.3s;
-        }
-        .product:hover {
-            transform: translateY(-5px);
-            border-color: #ff2f92;
-        }
-        .product-image {
-            height: 220px;
-            background:
-                radial-gradient(circle, rgba(255,47,146,0.3), transparent 55%),
-                #101010;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: #ff2f92;
-            font-size: 40px;
-        }
-        .product h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-        .product p {
-            color: #999;
-            line-height: 1.5;
-            font-size: 14px;
-        }
-        /* CONTACT */
-        .contact {
-            text-align: center;
-            padding: 90px 20px;
-            background: #ff2f92;
-            color: white;
-        }
-        .contact h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-        .contact p {
-            margin-bottom: 15px;
-        }
-        .contact .button {
-            background: #080808;
-            color: white;
-        }
-        /* FOOTER */
-        footer {
-            background: #050505;
-            text-align: center;
-            padding: 30px;
-            color: #777;
-            font-size: 13px;
-        }
-        /* MOBILE */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav a {
-                margin: 0 7px;
-            }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px 25px;
-            }
-            .hero h1 {
-                font-size: 48px;
-            }
-            .hero p {
-                margin: auto;
-            }
-            .gloss-area {
-                margin-top: 50px;
-                width: 280px;
-                height: 350px;
-            }
-            .products {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Essentials.ng</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff7fa;
+    color: #3d1725;
+}
+/* HEADER */
+header {
+    background: #ffffff;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f2d5df;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #8f174b;
+}
+.logo span {
+    color: #d72d72;
+}
+nav a {
+    text-decoration: none;
+    color: #542337;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+nav a:hover {
+    color: #d72d72;
+}
+/* HERO */
+.hero {
+    min-height: 620px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            #f5b4ca,
+            #fce4ec 30%,
+            #fff7fa 65%
+        );
+}
+.hero-text {
+    max-width: 540px;
+}
+.small-text {
+    color: #b31e5c;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: 58px;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    color: #55152e;
+    margin-bottom: 25px;
+}
+.hero h1 span {
+    color: #d72d72;
+}
+.hero p {
+    color: #725360;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 450px;
+}
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #c92769;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(201,39,105,0.20);
+}
+.button:hover {
+    background: #8f174b;
+}
+/* LIP GLOSS VISUAL */
+.gloss-area {
+    width: 360px;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.pink-glow {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    background: #e94386;
+    filter: blur(75px);
+    opacity: 0.25;
+}
+.gloss {
+    width: 120px;
+    height: 325px;
+    background:
+        linear-gradient(
+            90deg,
+            #9d174f,
+            #df347a,
+            #ff9fc2,
+            #d51f6c,
+            #8f174b
+        );
+    border-radius: 18px 18px 28px 28px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 25px 50px rgba(143,23,75,0.25);
+    transform: rotate(-8deg);
+}
+.gloss::before {
+    content: "";
+    position: absolute;
+    width: 104px;
+    height: 72px;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #dcdcdc,
+        #ffffff
+    );
+    top: -58px;
+    left: 8px;
+    border-radius: 10px 10px 5px 5px;
+}
+.gloss::after {
+    content: "BEAUTY";
+    position: absolute;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+    transform: rotate(90deg);
+    top: 145px;
+    left: 32px;
+}
+/* CATEGORY SECTION */
+.categories {
+    padding: 80px 7%;
+    background: #ffffff;
+}
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.section-heading h2 {
+    font-size: 38px;
+    color: #55152e;
+}
+.section-heading p {
+    margin-top: 10px;
+    color: #86616e;
+}
+/* CATEGORY GRID */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+.category {
+    text-decoration: none;
+    color: #55152e;
+    background: #fff7fa;
+    border: 1px solid #f0ceda;
+    border-radius: 20px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+.category:hover {
+    transform: translateY(-7px);
+    background: #fde5ed;
+    border-color: #d72d72;
+    box-shadow: 0 15px 30px rgba(143,23,75,0.10);
+}
+.category-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+.category h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.category p {
+    color: #8a6572;
+    font-size: 13px;
+    line-height: 1.4;
+}
+/* PRODUCTS */
+.products-section {
+    padding: 80px 7%;
+    background: #fff7fa;
+}
+.product-placeholder {
+    background: white;
+    border: 1px solid #f1d4df;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+.product-placeholder h3 {
+    color: #8f174b;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.product-placeholder p {
+    color: #80606b;
+    line-height: 1.6;
+}
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(
+        135deg,
+        #d72d72,
+        #a91855
+    );
+    color: white;
+}
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.contact p {
+    margin-bottom: 10px;
+}
+.contact .button {
+    background: white;
+    color: #a91855;
+}
+.contact .button:hover {
+    background: #fff0f5;
+}
+/* FOOTER */
+footer {
+    background: #55152e;
+    text-align: center;
+    padding: 30px;
+    color: #f8dce7;
+    font-size: 13px;
+}
+/* MOBILE */
+@media (max-width: 900px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav a {
+        margin: 0 8px;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 25px;
+    }
+    .hero h1 {
+        font-size: 45px;
+    }
+    .hero p {
+        margin: auto;
+    }
+    .gloss-area {
+        margin-top: 50px;
+        width: 280px;
+        height: 350px;
+    }
+}
+@media (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
 <header>
@@ -264,26 +316,27 @@
     </div>
     <nav>
         <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
+        <a href="#categories">Shop</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 <section class="hero" id="home">
     <div class="hero-text">
         <div class="small-text">
-            LIP CARE • BEAUTY • GLOW
+            BEAUTY • LIP CARE • GLOW
         </div>
         <h1>
-            YOUR LIPS.<br>
-            YOUR <span>LOOK.</span><br>
+            YOUR BEAUTY.<br>
+            YOUR <span>STYLE.</span><br>
             YOUR GLOW.
         </h1>
         <p>
-            Lip essentials and beauty favourites for everyday
-            confidence, soft lips and that glossy finish.
+            Discover lip glosses, lip care products,
+            skincare, hair accessories and everyday
+            beauty essentials.
         </p>
-        <a class="button" href="#shop">
-            SHOP LIPS →
+        <a class="button" href="#categories">
+            SHOP NOW →
         </a>
     </div>
     <div class="gloss-area">
@@ -291,45 +344,69 @@
         <div class="gloss"></div>
     </div>
 </section>
-<section class="section" id="shop">
-    <div class="section-title">
-        <h2>Shop Your Favourites</h2>
+<section class="categories" id="categories">
+    <div class="section-heading">
+        <h2>Shop by Category</h2>
         <p>
-            Your everyday beauty essentials, all in one place.
+            Find exactly what you're looking for.
         </p>
     </div>
-    <div class="products">
-        <div class="product">
-            <div class="product-image">
-                💋
-            </div>
-            <h3>Lip Gloss</h3>
+    <div class="category-grid">
+        <a class="category" href="#lip-glosses">
+            <div class="category-icon">💋</div>
+            <h3>Lip Glosses</h3>
             <p>
-                Glossy, juicy lips for your everyday look.
+                Glossy lips for every mood and look.
             </p>
-        </div>
-        <div class="product">
-            <div class="product-image">
-                💗
-            </div>
-            <h3>Lip Combos</h3>
+        </a>
+        <a class="category" href="#lip-care">
+            <div class="category-icon">💗</div>
+            <h3>Lip Care Products</h3>
             <p>
-                The perfect lip combination for your look.
+                Products for soft and healthy-looking lips.
             </p>
-        </div>
-        <div class="product">
-            <div class="product-image">
-                ✨
-            </div>
-            <h3>Lip Care</h3>
+        </a>
+        <a class="category" href="#skincare">
+            <div class="category-icon">🧴</div>
+            <h3>Skincare</h3>
             <p>
-                Essentials for soft, smooth and moisturised lips.
+                Everyday skincare essentials.
             </p>
-        </div>
+        </a>
+        <a class="category" href="#hair-accessories">
+            <div class="category-icon">🎀</div>
+            <h3>Hair Accessories</h3>
+            <p>
+                Clips and accessories for your hair.
+            </p>
+        </a>
+        <a class="category" href="#beauty-essentials">
+            <div class="category-icon">✨</div>
+            <h3>Beauty Essentials</h3>
+            <p>
+                Little beauty extras you'll love.
+            </p>
+        </a>
+    </div>
+</section>
+<section class="products-section">
+    <div class="section-heading">
+        <h2>Our Products</h2>
+        <p>
+            Product pictures, prices and order buttons
+            will be added here.
+        </p>
+    </div>
+    <div class="product-placeholder">
+        <h3>Coming Soon 💗</h3>
+        <p>
+            We're getting your Beauty Essentials
+            collection ready.
+        </p>
     </div>
 </section>
 <section class="contact" id="contact">
-    <h2>Ready to glow? 💋</h2>
+    <h2>Ready to shop? 💗</h2>
     <p>
         Send us a message on WhatsApp to place your order.
     </p>
